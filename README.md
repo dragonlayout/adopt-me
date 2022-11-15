@@ -12,6 +12,23 @@ EditorConfig 的作用对象是编辑器，因此配置可作用于所有类型�
 EditorConfig 解决了编辑器配置层面的编码风格一致性问题，但是关于代码风格的部分并未涉及，比如是否需要在语句末尾添加分号、
 字符串使用单引号还是双引号等等。
 
+```editorconfig
+# .editorconfig
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 2
+indent_style = space
+insert_final_newline = true
+max_line_length = 80
+trim_trailing_whitespace = true
+
+[*.md]
+trim_trailing_whitespace = false
+```
+
 ### Prettier(Code formatter)
 
 不同开发者的代码书写风格或多或少存在不同，比如一些开发者系统添加分号，一些认为没有必要添加分号。
@@ -25,7 +42,7 @@ Prettier 处理范围包括:
 - 分号处理
 - 打印宽度：控制换行
 
-Intellij IDEA config
+#### Intellij IDEA Config
 
 - `npm install --global prettier`
 - install plugin prettier
@@ -33,7 +50,15 @@ Intellij IDEA config
   - On 'Reformat Code' action
   - On save
 
+#### Using default configuration
+```
+# .prettierrc
+{}
+```
+
 ### ESLint(Code Linter)
+
+`npm install --save-devD eslint`
 
 专注于找到代码存在的问题避免错误。
 - 避免低级 bug，找出可能发生的语法错误
@@ -41,4 +66,6 @@ Intellij IDEA config
 - 确保代码遵循最佳实践(airbnb style, javascript standard)
 - 统一的代码风格
 
-代码风格检查使用 prettier，解决 ESLint 和 prettier 职责冲突的部分
+代码风格检查使用 prettier，解决 ESLint 和 prettier 职责冲突，添加以下依赖
+
+`npm install --save-dev eslint-config-prettier`

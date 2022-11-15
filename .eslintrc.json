@@ -4,7 +4,6 @@
     "plugin:import/errors",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
-    // 覆盖 eslint 格式配置,写在最后
     "prettier"
   ],
   "rules": {
